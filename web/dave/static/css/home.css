@@ -1,0 +1,138 @@
+
+.hero{
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin-left: 10%;
+    text-transform: capitalize;
+}
+
+.hero img{
+    border-radius: 50%;
+    width: 30%;
+    position: absolute;
+    right: 15%;
+    top: 20%;
+}
+
+.main-details{
+    line-height: 90%;
+    margin-top: 20%;
+    font-size: 1.3rem;
+    margin-left: 10%;
+}
+
+.btn-primary{
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(90deg, #4458dc 0%, #854fee 100%);
+    padding: 2% 4%;
+    font-size: 80%;
+    border-radius: 5px;
+    transition: all 1s ease;
+}
+
+.btn-primary:hover{
+    color: linear-gradient(90deg, #4458dc 0%, #854fee 100%);
+    background: transparent;
+    color: blue;
+    border: 1px solid blue;
+}
+
+.main-details hr{
+    margin-bottom: 5%;
+}
+
+.detail{
+    width: 50%;
+    margin-left: 10%;
+    line-height: 1.5rem;
+}
+
+.detail  h1{
+    line-height: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.about{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    margin: 10%;
+    margin-top: 19%;
+}
+
+.lang-hero{
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.lang{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 10%;
+}
+
+.lang div{
+    cursor: pointer;
+    margin: 2%;
+    background: rgba(248, 252, 253, 0.973);
+    border: 0px solid;
+    border-radius: 20px;
+    padding: 2% 4%;
+}
+
+@media (max-width: 769px){
+    .main-details{
+        margin-left: 5%;
+    }
+    
+    .main-details hr{
+        margin-bottom: 10%;
+    }
+
+    .btn-primary{
+        font-size: 110%;
+    }
+
+    .hero{
+        margin-top: 15%;
+        flex-direction: column;
+    }
+
+    .main-details p{
+        line-height: 1.5rem;
+    }
+
+    .hero img {
+        position: relative;
+        width: 100%;
+        margin: 15% 0 0 10%;
+    }
+
+    .about{
+        width: 90%;
+        margin-left: 2.5%;
+        flex-direction: column;
+    }
+
+    .detail p{
+        margin-bottom: 10%;
+    }
+
+    .lang{
+        flex-direction: column;
+    }
+
+    .detail{
+        width: 90%;
+    }
+
+    .detail p{
+        text-align: justify;
+    }
+}

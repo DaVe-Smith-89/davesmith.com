@@ -1,0 +1,63 @@
+
+{% extends 'base.html' %}
+
+{% block style %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+{% block content %}
+    <section class="hero">
+        <div data-aos="fade-right" data-aos-duration="1000" class="main-details">
+            <h3>hello,</h3>
+            <h1>i'm dave smith.</h1>
+            <p>sri lankan programmer, web developer and youtuber.</p>
+            <hr>
+            <a href="https://github.com/DaVe-Smith-89" class="btn-primary">follow me</a>
+        </div>
+        <img data-aos="zoom-out" data-aos-duration="1500" src="https://avatars.githubusercontent.com/u/73696370?v=4">
+    </section>
+    <section class="about">
+        <img data-aos="zoom-out" data-aos-duration="1500" src="{{ url_for('static', filename='img/about.png') }}">
+        <div class="detail">
+            <h1>a description <br> about me</h1>
+            <p>The name I use on social media is dave smith.  My future hope is to become a software Engineer.  I live in Kurunegala.  John kener and I started sl cyber warriors on 2/10/2020.  I have been doing programming ever since.</p>
+        </div>
+    </section>
+    <section class="language">
+        <div data-aos="fade-down" data-aos-duration="1000" class="lang-hero">
+            <h1>languages and usage</h1>
+            <p>programming languages i know and their use.</p>
+        </div>
+        <div class="lang">
+            <div data-aos="zoom-out" data-aos-duration="3000">
+                <i class="fab fa-python fa-3x"></i>
+                <h2>python</h2>
+                <p>usage: 40%</p>
+            </div>
+            <div data-aos="zoom-out" data-aos-duration="3000">
+                <i class="fab fa-css3-alt fa-3x"></i>
+                <h2>css</h2>
+                <p>usage: 20%</p>
+            </div>
+            <div data-aos="zoom-out" data-aos-duration="3000">
+                <i class="fab fa-js-square fa-3x"></i>
+                <h2>js</h2>
+                <p>usage: 10%</p>
+            </div>
+            <div data-aos="zoom-out" data-aos-duration="3000">
+                <i class="fab fa-html5 fa-3x"></i>
+                <h2>html</h2>
+                <p>usage: 20%</p>
+            </div>
+            <div data-aos="zoom-out" data-aos-duration="3000">
+                <i class="fab fa-php fa-3x"></i>
+                <h2>php</h2>
+                <p>usage: 10%</p>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+
+{% block js %}
+    <script src="{{ url_for('static', filename='js/home.js') }}"></script>
+{% endblock %}

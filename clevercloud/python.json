@@ -1,0 +1,9 @@
+{
+    "build": {
+        "folder": "web"
+    },
+    "deploy": {
+        "module": "run:app",
+        "static": "/web/dave/static/"
+    }
+}

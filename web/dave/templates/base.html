@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Dave Smith">
+    <meta name="description" content="All right reserved http://github.com/Dave-Smith-89">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='img/logo.jpg') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fontawesome/css/all.min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/aos.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+    {% block style %}
+
+    {% endblock %}
+    <title>Dave Smith</title>
+</head>
+<body>
+    <head>
+        <nav>
+            <div class="brand">
+                <a>dave&#160Smith</a>
+                <button class="togle"><i class="fas fa-bars fa-lg"></i></button>
+            </div>
+            <ul data-aos="fade-left" class="navigations">
+                <li class="nav-item"><a href="{{ url_for('home') }}">home</a></li>
+                {% if request.path == '/home' or request.path == '/' %}
+                    <li id="about" class="nav-item"><a>about</a></li>
+                    <li id="languages" class="nav-item"><a>languages</a></li>
+                {% else %}
+                    <li class="nav-item"><a href="{{ url_for('about') }}" >about</a></li>
+                    <li class="nav-item"><a href="{{ url_for('languages') }}">languages</a></li>
+                {% endif %}
+                <li class="nav-item"><a href="{{ url_for('tools') }}">tools</a></li>
+                {% if request.path == '/home' or request.path == '/' %}
+                    <li class="nav-item"><a id="contact">contact&#160me</a></li>
+                {% else %}
+                    <li class="nav-item"><a href="{{ url_for('contact') }}">contact&#160me</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </head>
+
+    {% block  content %}
+
+    {% endblock %}
+    <footer>
+        <div class="social">
+            <a href="https://www.facebook.com/people/Dave-Smith/100063607333742/"><i class="fab fa-facebook fa-lg"></i></a>
+            <a href="http://wa.me/94755958542"><i class="fab fa-whatsapp fa-lg"></i></a>
+            <a href="https://github.com/DaVe-Smith-89"><i class="fab fa-github fa-lg"></i></a>
+            <a href="http://t.me/DaVe-Smith-89"><i class="fab fa-telegram fa-lg"></i></a>
+        </div>
+        <p>all right reserved @daVe-smith-89</p>
+    </footer>
+</body>
+    <script src="{{ url_for('static', filename='js/jquary3.6.0.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/aos.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    {% block js %}
+
+    {% endblock %}
+</html>
