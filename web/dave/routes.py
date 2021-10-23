@@ -1,5 +1,5 @@
 from dave import app, db, admin
-from flask import render_template, request, redirect, request, url_for, jsonify
+from flask import render_template, request, redirect, request, url_for, jsonify, flash
 from dave.models import Tool, myModelView, User
 from dave.forms import LoginForm
 from flask_login import login_user, current_user, logout_user
@@ -42,19 +42,18 @@ def tool(tool_id, methods=['POST', 'GET']):
     tool = Tool.query.get_or_404(tool_id)
     return render_template('tool.html', tool=tool)
 
-@app.route('/am7jymb6', methods=['POST', 'GET'])
+@app.route('/am7jymb6', methods=['POST'])
 def login():
-    form = LoginForm()
-    if form.validate_on_submit():
-        user = User.query.filter_by(email=form.email.data).first()
-        if user and user.password == form.password.data:
-            login_user(user)
-    return render_template('login.html', form=form)
+    user = User.query.filter_by(email=request.form['email']).first()
+    if user and user.password == request.form['passwd']:
+        login_user(user)
+        flash('You are logged Successfully.', 'success')
+    return redirect('/3xf8z81HUddaTkyqZBXJm9PG')
 
 @app.route('/logout')
 def logout():
     logout_user()
-    return redirect(url_for('home'))
+    return redirect('/3xf8z81HUddaTkyqZBXJm9PG')
 
 @app.errorhandler(404)
 def error_404(error):
